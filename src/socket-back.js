@@ -24,8 +24,6 @@ io.on("connection", (socket) => {
         const documento = encontrarDocumento(nomeDocumento);
 
         if (documento) {
-           // socket.emit("texto_documento", documento.texto)
-
            callback(documento.texto);
         }
         
