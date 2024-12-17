@@ -1,4 +1,5 @@
 import {
+  emitirExcluirDocumento,
     emitirTextoEditor,
     selecionarDocumento,
   } from "./socket-front-documento.js";
@@ -8,6 +9,7 @@ import {
   
   const textoEditor = document.getElementById("editor-texto");
   const tituloDocumento = document.getElementById("titulo-documento");
+  const botaoExcluir = document.getElementById("excluir-documento");
   
   tituloDocumento.textContent = nomeDocumento || "Documento sem título";
   
@@ -24,4 +26,8 @@ import {
     textoEditor.value = texto;
   }
   
+  botaoExcluir.addEventListener("click", () => {
+    emitirExcluirDocumento(nomeDocumento);
+  })
+                    
   export { atualizaTextoEditor };
